@@ -2,37 +2,37 @@
   {
     "id": 1,
     "name": "Apple",
-    "type": "apple",
+    "brand": "apple",
     "image": "https://i.ibb.co/d5Q4JFQ/apple.jpg"
   },
   {
     "id": 2,
     "name": "Samsung",
-    "type": "samsung",
+    "brand": "samsung",
     "image": "https://i.ibb.co/Hxk3s3T/Samsung.jpg"
   },
   {
     "id": 3,
     "name": "Sony",
-    "type": "sony",
+    "brand": "sony",
     "image": "https://i.ibb.co/mbp5TpR/sony.jpg"
   },
   {
     "id": 4,
-    "name": "Intel",
-    "type": "intel",
-    "image": "https://i.ibb.co/n0xnj0T/intel.webp"
+    "name": "Walton",
+    "brand": "walton",
+    "image": "https://i.ibb.co/YXLq7Sg/maxresdefault.jpg"
   },
   {
     "id": 5,
     "name": "Google",
-    "type": "google",
+    "brand": "google",
     "image": "https://i.ibb.co/4gmVrf1/google.jpg"
   },
   {
     "id": 6,
     "name": "Msi",
-    "type": "msi",
+    "brand": "msi",
     "image": "https://i.ibb.co/MRgmJVN/msi.jpg"
   }
 ]

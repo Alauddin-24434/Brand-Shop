@@ -14,6 +14,7 @@ import Home from './Pages/Home';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 import Cetagory from './Components/Cetagory/Cetagory';
+import AddProduct from './Pages/AddProduct';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element:<Cetagory></Cetagory>,
        
         
+      },
+      {
+        path:'/addProduct',
+        element:<AddProduct></AddProduct>
       }
       ,
       {
