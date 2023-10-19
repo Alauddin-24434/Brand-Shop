@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const BrandDetailsUpdate = () => {
-    const loadUpdateSingleData=useLoaderData() || {}
+    const loadUpdateSingleData=useLoaderData() 
   const {_id,name, brand, type, price, rating, shortDescription, image}=loadUpdateSingleData
 
     const handleUpdate = event => {
@@ -19,7 +19,7 @@ const BrandDetailsUpdate = () => {
 
         const updateSingleBrand = { name, brand, type, price, rating, shortDescription, image };
         console.log(updateSingleBrand)
-    // send data to the server
+    // send update data to the server
     fetch(`http://localhost:5000/brandDetailsUpdate/${_id} `, {
         method: 'PUT',
         headers: {

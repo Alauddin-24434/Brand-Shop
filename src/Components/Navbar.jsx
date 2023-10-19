@@ -6,7 +6,8 @@ const Navbar = () => {
 
         <NavLink to={'/'}>HOME</NavLink>
         <NavLink to={'/addProduct'}>ADD PRODUCT</NavLink>
-        <NavLink to={'/cart'}>MY CART</NavLink>
+        <NavLink to={'/myCart'}>MY CART</NavLink>
+       
         <NavLink to={'/login'}>LOGIN</NavLink>
         <NavLink to={'/signUp'}>SIGN UP</NavLink>
 

@@ -15,7 +15,7 @@ const AddProduct = () => {
         const newBrand = { name, brand, type, price, rating, shortDescription, image };
         // console.log(newBrand)
 
-        fetch('http://localhost:5000/brand', {
+        fetch('', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
