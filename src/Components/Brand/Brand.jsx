@@ -13,9 +13,8 @@ const Brand = () => {
 
     return (
         <div>
-            <div>
-              
-            </div>
+
+        
             <div className="max-w-6xl mx-auto grid grid-cols-4">
 
                 {
@@ -34,9 +33,9 @@ const Brand = () => {
                             </div>
                             <div className="flex flex-row justify-between  ">
                                 <Link to={`/brandSingle/${load._id}`}>  <button className="btn ">Details</button></Link>
-                              <Link to={`/brandDetailsUpdate/${load._id}`}>
-                              <button className="btn">Update</button>
-                              </Link>
+                                <Link to={`/brandDetailsUpdate/${load._id}`}>
+                                    <button className="btn">Update</button>
+                                </Link>
                             </div>
                         </div>
                     </div>)

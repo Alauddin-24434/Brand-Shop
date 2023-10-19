@@ -14,7 +14,11 @@ const Cetagory = () => {
     }, [])
     // console.log(fakeData)
     return (
-        <div className="max-w-5xl mx-auto grid grid-cols-3 gap-4 ">
+      <div className="mt-4 max-w-5xl mx-auto ">
+        <h2 className="font-light text-4xl py-8">
+        Categories
+        </h2>
+          <div className="grid grid-cols-3 gap-4 ">
             {
                 fakeData?.map(fake => <div className="border w-80 h-auto" key={fake.id}>
 
@@ -39,6 +43,7 @@ const Cetagory = () => {
             }
           
         </div>
+      </div>
     );
 };
 
