@@ -1,48 +1,43 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
+
 const Cetagory = () => {
-    const [loadCetagory, setLoadCetagory] = useState([])
+
+    const [fakeData, setFakeData] = useState([])
+
     useEffect(() => {
         fetch('/brand.json')
             .then(res => res.json())
-            .then(data => {
-
-                console.log(data)
-                setLoadCetagory(data)
-
-            })
+            .then(data => setFakeData(data))
     }, [])
-    console.log(loadCetagory)
-
-const handleBrandClick=(brand)=>{
-    console.log("this is handle", brand )
-    fetch()
-}
-
-
-
-
+    console.log(fakeData)
     return (
-        <div>
+        <div className="max-w-5xl mx-auto grid grid-cols-3 gap-4 ">
+            {
+                fakeData?.map(fake => <div key={fake.id}>
 
-            <p>This is cetagory</p>
-            <div className="grid grid-cols-3 max-w-6xl p-4 gap-4 mx-auto">
-                {
-                    loadCetagory?.map(cat => <div onClick={()=>handleBrandClick(cat.brand)} key={cat.id} className="max-w-6xl h-auto shadow-md">
-                        <Link to={`/brand/${cat.brand}`}>
-                        <div className="">
-                            <img className="object-cover w-full h-60" src={cat.image} alt="" />
-
-
-                            <div className="p-4">  {cat.name}</div>
+                    <Link to={`/brand/${fake.brand}`}>
+                    <div className="w-96 h-96">
+                        <img className="w-full h-60" src={fake.image} alt="" />
+                        <div>
+                            <p>{fake.brand}</p>
                         </div>
-                        </Link>
-                    </div>)
-                }
-            </div>
+                    </div>
 
+
+
+                    </Link>
+                </div>
+
+
+
+
+                )
+
+            }
+          
         </div>
     );
 };
