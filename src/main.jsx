@@ -10,9 +10,12 @@ import MainLayout from './LayOut/MainLayout';
 import Home from './Pages/Home';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
-import Cetagory from './Components/Cetagory/Cetagory';
+
 import AddProduct from './Pages/AddProduct';
 import Brand from './Components/Brand/Brand';
+import AllProducts from './Components/AllProducts/AllProducts';
+import ProductDetailsCard from './Components/ProductDetailsCrad/ProductDetailsCard';
+import BrandDetailsUpdate from './Components/BrandDetailsUpdate/BrandDetailsUpdate';
 
 
 const router = createBrowserRouter([
@@ -22,10 +25,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/brand')
       },
 
-     
+
 
       {
         path: '/addProduct',
@@ -38,6 +42,24 @@ const router = createBrowserRouter([
         element: <Brand></Brand>,
         loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.brand}`)
       },
+      {
+        path: '/brand',
+        element: <AllProducts></AllProducts>,
+
+      },
+      {
+        path: '/brandSingle/:id',
+        element: <ProductDetailsCard></ProductDetailsCard>,
+        loader: ({ params }) => fetch(`http://localhost:5000/brandSingle/${params.id}`)
+
+
+      },
+      {
+        path:'/brandDetailsUpdate/:id',
+        element:<BrandDetailsUpdate></BrandDetailsUpdate>,
+        loader: ({ params }) => fetch(`http://localhost:5000/brandDetailsUpdate/${params.id}`)
+      }
+      ,
       {
         path: '/signUp',
         element: <SignUp></SignUp>

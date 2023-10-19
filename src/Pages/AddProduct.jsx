@@ -12,15 +12,15 @@ const AddProduct = () => {
 
         const rating = form.rating.value;
 
-        const newWatch = { name, brand, type, price, rating, shortDescription, image };
-        console.log(newWatch)
+        const newBrand = { name, brand, type, price, rating, shortDescription, image };
+        // console.log(newBrand)
 
         fetch('http://localhost:5000/brand', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newWatch)
+            body: JSON.stringify(newBrand)
         })
       
     }

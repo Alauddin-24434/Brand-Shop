@@ -12,19 +12,19 @@ const Cetagory = () => {
             .then(res => res.json())
             .then(data => setFakeData(data))
     }, [])
-    console.log(fakeData)
+    // console.log(fakeData)
     return (
         <div className="max-w-5xl mx-auto grid grid-cols-3 gap-4 ">
             {
-                fakeData?.map(fake => <div key={fake.id}>
+                fakeData?.map(fake => <div className="border w-80 h-auto" key={fake.id}>
 
                     <Link to={`/brand/${fake.brand}`}>
-                    <div className="w-96 h-96">
+                 
                         <img className="w-full h-60" src={fake.image} alt="" />
-                        <div>
-                            <p>{fake.brand}</p>
+                        <div className="p-2">
+                            <p>{fake.name}</p>
                         </div>
-                    </div>
+                   
 
 
 
