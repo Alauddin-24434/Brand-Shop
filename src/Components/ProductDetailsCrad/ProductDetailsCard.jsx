@@ -35,7 +35,7 @@ const ProductDetailsCard = () => {
                 }
         })
      
-    }git 
+    }
     return (
         <div className="max-w-6xl mx-auto bg-green-600">
             <div className="grid md:grid-cols-4 lg:grid-cols-5">
