@@ -12,10 +12,10 @@ const Brand = () => {
 
 
     return (
-        <div>
+        <div className="mt-8">
 
         
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="max-w-6xl mx-auto gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
                 {
                     loadData?.map(load => <div className="max-w-64 h-96 border  bg-white shadow-lg" key={load._id}>

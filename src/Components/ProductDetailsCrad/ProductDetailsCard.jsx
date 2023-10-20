@@ -8,12 +8,12 @@ const ProductDetailsCard = () => {
     const loadDetailsCard = useLoaderData()
     const { name, brand, type, price, rating, shortDescription, image } = loadDetailsCard
 
-    const email = authUser.email;
+    const email = authUser?.email;
 
     const handleCart = (name, brand, type, price, rating, shortDescription, image) => {
         console.log(name, brand, type, price, rating, shortDescription, image)
 
-        const cartInfo = {email, name, brand, type, price, rating, shortDescription, image }
+        const cartInfo = { email, name, brand, type, price, rating, shortDescription, image }
         fetch('http://localhost:5000/cart', {
             method: 'POST',
             headers: {
@@ -40,25 +40,23 @@ const ProductDetailsCard = () => {
 
     }
     return (
-        <div className="max-w-6xl mx-auto bg-green-600">
-            <div className="grid md:grid-cols-4 lg:grid-cols-5">
-                <div className="lg:col-span-4 grid max-w-7xl mx-auto md:grid-cols-2 lg:grid-cols-4 bg-yellow-700 ">
-                    <div className="col-span-2  w-80 h-72 bg-red-700">
-                        <img className="h-full w-80 object-cover" src={image} alt="" />
-                    </div>
-                    <div className="col-span-2 bg-purple-900 ">
-                        <div className="bg-red-600">
+        <div className="max-w-6xl mx-auto  grid grid-cols-5">
 
-                            <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div className="col-span-1 bg-purple-700">
-                    <p > {price}</p>
-
-                </div>
+            <div className="col-span-2 max-w-6xl h-52">
+                <img className="w-full h-96" src={image} alt="" />
             </div>
+            <div className="col-span-3 py-4">
+                <p>{name}</p>
+                <hr className="p-2" />
+                <p>{brand}</p>
+                <p>{price}</p>
+                <hr className="p-2" />
+                <p>{shortDescription}</p>
+                <hr className="p-2" />
+                <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
+            </div>
+
+
         </div>
     );
 };
