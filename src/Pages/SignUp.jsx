@@ -1,18 +1,73 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+
 
 
     const handleSignUp = (event) => {
         event.preventDefault();
 
 
-        const form=event.target;
-        const name=form.name.value;
-        const email=form.email.value;
-        const password=form.password.value;
-        const image=form.image.value;
-        console.log(name,email,password,image)
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const image = form.image.value;
+        console.log(name, email, password, image)
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+
+                // UPDATE PROFILE
+                    updateProfile(result.user,{
+                        displayName:name,
+                        photoURL:image,
+
+                    })
+                    // .then((result)=>console.log(result.user))
+                    const myUser = result.user;
+                    console.log(myUser)
+                    const createTime=result.user?.metadata?.creationTime;
+    
+    
+                    const user = { email,createTime }
+                    fetch('http://localhost:5000/user',{
+                        method:"POST",
+                        headers:{
+                            'content-type':'application/json'
+                        },
+                        body:JSON.stringify(user)
+                    })
+                    .then(res => res.json())
+                    .then(data=>{
+                        console.log(data)
+                        if(data.insertedId){
+                            Swal.fire({
+                                title: 'Success!',
+                                text: "user added to the database!",
+                                icon: 'success',
+                              
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                
+                            })
+                            
+                      }
+                    })
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+
+
+
+
 
     }
     return (

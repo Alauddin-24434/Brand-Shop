@@ -6,7 +6,7 @@ import MycartDelete from "./MycartDelete";
 const MyCart = () => {
     const loadCartInfo = useLoaderData()
     const [cartUpadete, setCartUpdate]=useState(loadCartInfo)
-    console.log(loadCartInfo)
+    console.log("sign",loadCartInfo)
 
    
 

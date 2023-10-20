@@ -1,40 +1,43 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ProductDetailsCard = () => {
-    const loadDetailsCard = useLoaderData() 
-    const {  name, brand, type, price, rating, shortDescription, image } = loadDetailsCard
+    const { authUser } = useContext(AuthContext)
+    const loadDetailsCard = useLoaderData()
+    const { name, brand, type, price, rating, shortDescription, image } = loadDetailsCard
 
+    const email = authUser.email;
 
+    const handleCart = (name, brand, type, price, rating, shortDescription, image) => {
+        console.log(name, brand, type, price, rating, shortDescription, image)
 
-    const handleCart = ( name, brand, type, price, rating, shortDescription, image) => {
-        console.log( name, brand, type, price, rating, shortDescription, image)
-
-        const cartInfo = { name, brand, type, price, rating, shortDescription, image }
-        fetch('http://localhost:5000/cart',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        const cartInfo = {email, name, brand, type, price, rating, shortDescription, image }
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(cartInfo)
+            body: JSON.stringify(cartInfo)
 
         })
-        .then(res=> res.json())
-        .then(data =>{
-            console.log(data);
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
                         text: "Product add successfully!",
                         icon: 'success',
-                      
+
                         confirmButtonColor: '#3085d6',
                         cancelButtonColor: '#d33',
-                        
+
                     })
                 }
-        })
-     
+            })
+
     }
     return (
         <div className="max-w-6xl mx-auto bg-green-600">
@@ -45,7 +48,7 @@ const ProductDetailsCard = () => {
                     </div>
                     <div className="col-span-2 bg-purple-900 ">
                         <div className="bg-red-600">
-                          
+
                             <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
                         </div>
                     </div>
