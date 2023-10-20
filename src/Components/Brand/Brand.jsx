@@ -15,10 +15,10 @@ const Brand = () => {
         <div>
 
         
-            <div className="max-w-6xl mx-auto grid grid-cols-4">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
                 {
-                    loadData?.map(load => <div className="w-64 h-96 border  bg-white shadow-lg" key={load._id}>
+                    loadData?.map(load => <div className="max-w-64 h-96 border  bg-white shadow-lg" key={load._id}>
                         <div>
                             <img className="w-full h-48" src={load.image} alt="" />
 

@@ -31,8 +31,6 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/brand')
       },
 
-
-
       {
         path: '/addProduct',
         element: <AddProduct></AddProduct>,
@@ -69,6 +67,7 @@ const router = createBrowserRouter([
         loader: ()=>fetch('http://localhost:5000/cart')
       }
       ,
+      
       {
         path: '/signUp',
         element: <SignUp></SignUp>

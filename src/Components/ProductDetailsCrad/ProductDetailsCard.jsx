@@ -3,14 +3,14 @@ import Swal from "sweetalert2";
 
 const ProductDetailsCard = () => {
     const loadDetailsCard = useLoaderData() 
-    const { _id, name, brand, type, price, rating, shortDescription, image } = loadDetailsCard
+    const {  name, brand, type, price, rating, shortDescription, image } = loadDetailsCard
 
 
 
-    const handleCart = (_id, name, brand, type, price, rating, shortDescription, image) => {
-        console.log(_id, name, brand, type, price, rating, shortDescription, image)
+    const handleCart = ( name, brand, type, price, rating, shortDescription, image) => {
+        console.log( name, brand, type, price, rating, shortDescription, image)
 
-        const cartInfo = { _id, name, brand, type, price, rating, shortDescription, image }
+        const cartInfo = { name, brand, type, price, rating, shortDescription, image }
         fetch('http://localhost:5000/cart',{
             method:'POST',
             headers:{
@@ -25,7 +25,7 @@ const ProductDetailsCard = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: "Coffee updated successfully!",
+                        text: "Product add successfully!",
                         icon: 'success',
                       
                         confirmButtonColor: '#3085d6',
@@ -45,8 +45,8 @@ const ProductDetailsCard = () => {
                     </div>
                     <div className="col-span-2 bg-purple-900 ">
                         <div className="bg-red-600">
-                            <p>{_id}</p>
-                            <button onClick={() => handleCart(_id, name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
+                          
+                            <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
                         </div>
                     </div>
 

@@ -37,7 +37,7 @@ const BrandDetailsUpdate = () => {
 
                 Swal.fire({
                     title: 'Success!',
-                    text: "Coffee updated successfully!",
+                    text: "Product updated successfully!",
                     icon: 'success',
                   
                     confirmButtonColor: '#3085d6',
