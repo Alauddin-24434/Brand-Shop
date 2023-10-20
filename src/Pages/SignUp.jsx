@@ -1,73 +1,137 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+
+import { useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
 
+    const [signUpError, setSignUpError] = useState('')
+
+    const navigate = useNavigate()
 
 
-    const handleSignUp = (event) => {
-        event.preventDefault();
+
+    const handleRegister = e => {
+
+        e.preventDefault()
+        const name = e.target.name.value;
+        const image = e.target.image.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        console.log(name, image, email, password)
+
+        // input field and message clear
+        setSignUpError('')
+
+        function isPasswordValid(passwords) {
+            // Define regular expressions to check for uppercase and lowercase letters
+            const uppercaseRegex = /[A-Z]/;
+            const lowercaseRegex = /[a-z]/;
+            const specialCharacterRegex = /[^A-Za-z0-9\s]/g;
+
+            // Check if the password contains at least one uppercase and one lowercase letter
+            const hasUppercase = uppercaseRegex.test(passwords);
+            const hasLowercase = lowercaseRegex.test(passwords);
+            const hasSpecialCharacter = specialCharacterRegex.test(passwords);
+            // Check if the password meets the minimum length requirement
+            const isLengthValid = password.length > 5;
+
+            // Return true if all conditions are met, indicating a valid password
+            return hasUppercase && hasLowercase && hasSpecialCharacter && isLengthValid;
 
 
-        const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        const image = form.image.value;
-        console.log(name, email, password, image)
+        }
+        const passwords = password;
+        const isValid = isPasswordValid(passwords);
+        if (isValid) {
 
-        createUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            // user create 
+            createUser(email, password)
+                .then(result => {
 
-                // UPDATE PROFILE
-                    updateProfile(result.user,{
-                        displayName:name,
-                        photoURL:image,
 
+
+
+                    // update profile
+                    updateProfile(result.user, {
+                        displayName: name,
+                        photoURL: image,
                     })
-                    // .then((result)=>console.log(result.user))
+
                     const myUser = result.user;
                     console.log(myUser)
-                    const createTime=result.user?.metadata?.creationTime;
-    
-    
-                    const user = { email,createTime }
-                    fetch('http://localhost:5000/user',{
-                        method:"POST",
-                        headers:{
-                            'content-type':'application/json'
+                    const createTime = result.user?.metadata?.creationTime;
+
+
+                    const user = { email, createTime }
+                    fetch('http://localhost:5000/user', {
+                        method: "POST",
+                        headers: {
+                            'content-type': 'application/json'
                         },
-                        body:JSON.stringify(user)
+                        body: JSON.stringify(user)
                     })
-                    .then(res => res.json())
-                    .then(data=>{
-                        console.log(data)
-                        if(data.insertedId){
-                            Swal.fire({
-                                title: 'Success!',
-                                text: "user added to the database!",
-                                icon: 'success',
-                              
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                
-                            })
-                            
-                      }
-                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            if (data.insertedId) {
+                                Swal.fire({
+                                    title: 'Success!',
+                                    text: "User created successfully!",
+                                    icon: 'success',
+
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+
+                                })
+
+                            }
+                        })
+                    // 
+                    setTimeout(() => {
+                        navigate(location?.state ? location.state : '/'), 10
+                    }, "15");
+                })
+
+
+
+                .catch(error => {
+                    const errorMy = (error.message)
+                    setSignUpError(errorMy)
+
+                    {
+                        signUpError && Swal.fire({
+                            title: 'error!',
+                            text: signUpError,
+                            icon: 'error',
+
+
+
+                        })
+
+
+
+                    }
+
+                })
+        } else {
+
+
+
+
+            Swal.fire({
+                title: 'error!',
+                text: "You set invalid password use must at least 6 characters long both uppercase lower case and any speacial charectar !",
+                icon: 'error',
+
+
             })
-            .catch(error => {
-                console.log(error.message)
-            })
-
-
-
-
+        }
 
     }
     return (
@@ -78,7 +142,7 @@ const SignUp = () => {
                 <p className="mb-4">
                     Create your account. It’s free and only take a minute
                 </p>
-                <form onSubmit={handleSignUp} >
+                <form onSubmit={handleRegister} >
                     <div className="gap-5">
                         <input type="text" name="name" placeholder="Name" className="border border-gray-400 py-1 px-2 w-full" />
 
@@ -101,7 +165,9 @@ const SignUp = () => {
                         <button className="w-full bg-purple-500 py-3 text-center text-white">Register Now</button>
                     </div>
                 </form>
+
             </div>
+
         </div>
     );
 };
