@@ -43,17 +43,23 @@ const ProductDetailsCard = () => {
         <div className="max-w-6xl mx-auto  grid grid-cols-5">
 
             <div className="col-span-2 max-w-6xl h-52">
-                <img className="w-full h-96" src={image} alt="" />
+                <img className="w-full h-96 object-cover" src={image} alt="" />
             </div>
-            <div className="col-span-3 py-4">
-                <p>{name}</p>
+            <div className="col-span-3 p-4">
+                <p className="text-2xl">{name}</p>
                 <hr className="p-2" />
-                <p>{brand}</p>
-                <p>{price}</p>
+               <div className="py-2">
+               <p className="mt-2 mb-2">Brand: {brand}</p>
+                <p>Price: ${price}</p>
+               </div>
+               <hr />
+               <p>{rating}</p>
                 <hr className="p-2" />
                 <p>{shortDescription}</p>
                 <hr className="p-2" />
-                <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn">ADD To CART</button>
+              <div>
+              <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn btn-secondary w-full">ADD To CART</button>
+              </div>
             </div>
 
 

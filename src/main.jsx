@@ -18,6 +18,7 @@ import ProductDetailsCard from './Components/ProductDetailsCrad/ProductDetailsCa
 import BrandDetailsUpdate from './Components/BrandDetailsUpdate/BrandDetailsUpdate';
 import MyCart from './Components/MyCart/MyCart';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -34,13 +35,13 @@ const router = createBrowserRouter([
 
       {
         path: '/addProduct',
-        element: <AddProduct></AddProduct>,
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
 
       }
       ,
       {
         path: '/brand/:brand',
-        element: <Brand></Brand>,
+        element: <PrivateRoute><Brand></Brand></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.brand}`)
       },
       {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
       ,
       {
         path: '/myCart',
-        element:<MyCart></MyCart>,
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader: ()=>fetch('http://localhost:5000/cart')
       }
       ,
