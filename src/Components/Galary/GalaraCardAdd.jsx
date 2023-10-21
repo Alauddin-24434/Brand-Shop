@@ -17,7 +17,7 @@ const GalaraCardAdd = () => {
         const newBrand = { name, brand, type, price, image };
         // console.log(newBrand)
 
-        fetch('http://localhost:5000/galary', {
+        fetch('https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/galary', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

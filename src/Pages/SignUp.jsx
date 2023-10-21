@@ -69,7 +69,7 @@ const SignUp = () => {
 
 
                     const user = { email, createTime }
-                    fetch('http://localhost:5000/user', {
+                    fetch('https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/user', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'

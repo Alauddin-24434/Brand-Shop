@@ -1,8 +1,14 @@
-# React + Vite
+# Brandshop Technology and Electronics Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- useState : i use my react project useSatae hook for collect data.
+- UseContext: login, signout ,  onauth statechane other other perspective i use use context hook.
+- Aos Animation: i use aos animaton for my website good looking.
+- Sweet Alert: differnt diferent  puspors i use sweet alert my  Technology and Electronics Project.
+- Private Route: already i protect my  Technology and Electronics Project when user succesfuly login then user can visit my all website route.
 
-Currently, two official plugins are available:
+# My Live link :
+ https://brandshop-react-project.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ # My server side link :
+ 
+ https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app
