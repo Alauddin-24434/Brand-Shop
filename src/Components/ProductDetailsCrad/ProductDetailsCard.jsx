@@ -14,7 +14,7 @@ const ProductDetailsCard = () => {
         console.log(name, brand, type, price, rating, shortDescription, image)
 
         const cartInfo = { email, name, brand, type, price, rating, shortDescription, image }
-        fetch('https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/cart', {
+        fetch('http://localhost:5000/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

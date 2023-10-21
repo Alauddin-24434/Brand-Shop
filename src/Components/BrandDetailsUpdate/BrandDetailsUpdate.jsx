@@ -20,7 +20,7 @@ const BrandDetailsUpdate = () => {
         const updateSingleBrand = { name, brand, type, price, rating, shortDescription, image };
         console.log(updateSingleBrand)
     // send update data to the server
-    fetch(`https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/brandDetailsUpdate/${_id} `, {
+    fetch(`http://localhost:5000/brandDetailsUpdate/${_id} `, {
         method: 'PUT',
         headers: {
             'content-type':'application/json'

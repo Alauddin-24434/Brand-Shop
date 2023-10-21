@@ -20,7 +20,7 @@ const {_id,shortDescription,name,image}=cart;
             if (result.isConfirmed) {
 
                 // delete in clint side items
-              fetch(`https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/cartSingle/${_id}`,{
+              fetch(`http://localhost:5000/cartSingle/${_id}`,{
                 method:'DELETE'
               })
               .then(res=> res.json())

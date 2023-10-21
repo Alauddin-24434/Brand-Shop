@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-import { FcGoogle } from 'react-icons/fa';
+import { useNavigate , } from "react-router-dom";
+import { FcGoogle } from 'react-icons/fc';
+
 
 const Login = () => {
     const navigate = useNavigate()
 
-    const { userLogin,signInWithGoogle } = useContext(AuthContext)
+    const { userLogin ,signInWithGoogle} = useContext(AuthContext)
     const handleSignIn = (event) => {
         event.preventDefault();
 
@@ -79,8 +80,8 @@ const Login = () => {
                 <p className="mb-4">
                     Create your account. It’s free and only take a minute
                 </p>
-                <div className="mt-5 mb-4">
-                        <button onClick={handleGoogleSignIn} className="w-full border py-3 text-center text-white"><FcGoogle></FcGoogle>  Login with Google</button>
+                <div className="mt-5  mb-4">
+                        <button onClick={handleGoogleSignIn} className="w-full flex flex-row items-center justify-center gap-4 text-blue-700 border py-3 text-center font-medium"> <span><FcGoogle></FcGoogle></span> Login with Google</button>
                     </div>
                    <div className=" justify-evenly">
                    <hr className="h-1" /> <span>OR</span> <hr />

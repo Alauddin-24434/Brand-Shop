@@ -11,4 +11,4 @@
 
  # My server side link :
  
- https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app
+ http://localhost:5000/
