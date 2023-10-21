@@ -77,15 +77,11 @@ const Login = () => {
         <div className="min-h-screen justify-center flex py-8" >
             <div className="w-full lg:w-1/3 py-16 px-12">
                 <h2 className="text-3xl mb-4">Login</h2>
-                <p className="mb-4">
-                    Create your account. It’s free and only take a minute
-                </p>
+               
                 <div className="mt-5  mb-4">
                         <button onClick={handleGoogleSignIn} className="w-full flex flex-row items-center justify-center gap-4 text-blue-700 border py-3 text-center font-medium"> <span><FcGoogle></FcGoogle></span> Login with Google</button>
                     </div>
-                   <div className=" justify-evenly">
-                   <hr className="h-1" /> <span>OR</span> <hr />
-                   </div>
+                 
                 <form onSubmit={handleSignIn} >
 
 

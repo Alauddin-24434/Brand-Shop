@@ -9,7 +9,7 @@ const FlashSale = () => {
         .then(data=>setFakeData(data[1]))
     },[])
     return (
-     <div className="  mt-4  max-w-6xl mx-auto">
+     <div className="  mt-4 overflow-hidden max-w-6xl mx-auto">
         <h2 className="text-4xl py-4 font-light">
             Offer Sale
         </h2>
