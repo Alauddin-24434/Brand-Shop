@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/galary')
+        loader: () => fetch(' https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/galary')
         
       },
 
@@ -54,26 +54,26 @@ const router = createBrowserRouter([
       {
         path: '/brand/:brand',
         element: <PrivateRoute><Brand></Brand></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.brand}`)
+        loader: ({ params }) => fetch(` https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/brand/${params.brand}`)
       },
     
       {
         path: '/brandSingle/:id',
         element: <ProductDetailsCard></ProductDetailsCard>,
-        loader: ({ params }) => fetch(`http://localhost:5000/brandSingle/${params.id}`)
+        loader: ({ params }) => fetch(` https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/brandSingle/${params.id}`)
 
 
       },
       {
         path: '/brandDetailsUpdate/:id',
         element: <BrandDetailsUpdate></BrandDetailsUpdate>,
-        loader: ({ params }) => fetch(`http://localhost:5000/brandDetailsUpdate/${params.id}`)
+        loader: ({ params }) => fetch(` https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/brandDetailsUpdate/${params.id}`)
       }
       ,
       {
         path: '/myCart',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/cart')
+        loader: () => fetch(' https://b8a10-brandshop-server-side-alauddin-24434-qzj8zo0im.vercel.app/cart')
       }
       ,
       {

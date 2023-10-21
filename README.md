@@ -9,6 +9,3 @@
 # My Live link :
  https://brandshop-react-project.web.app
 
- # My server side link :
- 
- http://localhost:5000/
