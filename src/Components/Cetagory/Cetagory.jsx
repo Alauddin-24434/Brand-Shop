@@ -14,7 +14,7 @@ const Cetagory = () => {
     }, [])
     // console.log(fakeData)
     return (
-      <div className="mt-4 max-w-6xl mx-auto ">
+      <div data-aos="zoom-in-right" className="mt-4 max-w-6xl mx-auto ">
         <h2 className="font-light text-4xl py-8">
         Categories
         </h2>

@@ -21,13 +21,22 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import GalaryCard from './Components/Galary/GalaryCard';
 import GalaraCardAdd from './Components/Galary/GalaraCardAdd';
-
+import 'aos/dist/aos.css'; // Import the AOS CSS
+import AOS from 'aos';
+import ErrorPage from './Pages/ErrorPage';
+// Initialize AOS with your preferred options
+AOS.init({
+  duration: 1000, // Animation duration in milliseconds
+  easing: 'ease-in-out', // Easing for the animation
+  once: true, // Only animate elements once
+});
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

@@ -40,7 +40,7 @@ const ProductDetailsCard = () => {
 
     }
     return (
-        <div className="max-w-6xl mx-auto  grid grid-cols-5">
+        <div className="max-w-6xl mx-auto h-screen mt-8 grid grid-cols-5">
 
             <div className="col-span-2 max-w-6xl h-52">
                 <img className="w-full h-96 object-cover" src={image} alt="" />

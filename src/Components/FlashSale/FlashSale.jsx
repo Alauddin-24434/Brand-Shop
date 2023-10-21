@@ -9,7 +9,11 @@ const FlashSale = () => {
         .then(data=>setFakeData(data[1]))
     },[])
     return (
-        <div className="bg-white  mt-8  max-w-6xl mx-auto">
+     <div className="  mt-4  max-w-6xl mx-auto">
+        <h2 className="text-4xl py-4 font-light">
+            Offer Sale
+        </h2>
+        <div className="bg-white " >
             <div className=" flex flex-col p-4 lg:flex-row items-center gap-8">
                 <div>
                 <p>On Sale Now</p>
@@ -77,6 +81,7 @@ const FlashSale = () => {
 
 
         </div>
+     </div>
     );
 };
 
