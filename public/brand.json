@@ -1,38 +1,81 @@
-[
-  {
-    "id": 1,
-    "name": "Apple",
-    "brand": "apple",
-    "image": "https://i.ibb.co/d5Q4JFQ/apple.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Samsung",
-    "brand": "samsung",
-    "image": "https://i.ibb.co/Hxk3s3T/Samsung.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Sony",
-    "brand": "sony",
-    "image": "https://i.ibb.co/mbp5TpR/sony.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Walton",
-    "brand": "walton",
-    "image": "https://i.ibb.co/YXLq7Sg/maxresdefault.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Google",
-    "brand": "google",
-    "image": "https://i.ibb.co/4gmVrf1/google.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Msi",
-    "brand": "msi",
-    "image": "https://i.ibb.co/MRgmJVN/msi.jpg"
-  }
-]
+
+ [
+  [
+    {
+      "id": 1,
+      "name": "Apple",
+      "brand": "apple",
+      "image": "https://i.ibb.co/d5Q4JFQ/apple.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Samsung",
+      "brand": "samsung",
+      "image": "https://i.ibb.co/Hxk3s3T/Samsung.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sony",
+      "brand": "sony",
+      "image": "https://i.ibb.co/mbp5TpR/sony.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Walton",
+      "brand": "walton",
+      "image": "https://i.ibb.co/YXLq7Sg/maxresdefault.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Google",
+      "brand": "google",
+      "image": "https://i.ibb.co/4gmVrf1/google.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Msi",
+      "brand": "msi",
+      "image": "https://i.ibb.co/MRgmJVN/msi.jpg"
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "Star Master Rotating Starry Sky Light,Colorful Night Lights Projector Children Kids Baby Sleep Lighting Sky Star Master Projection Lamp Led Projection Home Decor",
+      "price":545,
+      "image": "https://i.ibb.co/0jMjMD5/2ef05c19b374ccd621ce8925377302f9.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Baby Borka Exclusive premium quality Dubai Cherry for Women",
+      "price":785,
+      "image": "https://i.ibb.co/B6BB8y5/S8082146913104fc5803f749b3705882b3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "RED COLOUR COTTON LONG SLEEVE T- SHART FOR MEN .",
+      "price":495,
+      "image": "https://i.ibb.co/TP2XS9b/bd7915034c2cd686276fb2a78b37a156-jpg-750x750-jpg.webp"
+    },
+    {
+      "id": 4,
+      "name": "T900 Pro Ultra Smart Watch for Men Women 2.09 Full Touch Bluetooth Call Sports ",
+      "price":645,
+      "image": "https://i.ibb.co/Y7V88ZM/38a8e145957346d9e3a7b92a525667e8-jpg-750x750-jpg.webp"
+    },
+    {
+      "id": 5,
+      "name": "JR-EC05 TYPE-C Series Half In-Ear Wired Earphones type c",
+      "price":85,
+      "image": "https://i.ibb.co/3zh8Fbv/7bd9ac70bbf21fbf7dc0fa6c6ccb271b-jpg-200x200q80-product-jpg.webp"
+    },
+    {
+      "id": 6,
+      "name": "Men Women Mini Backpack Daypack Bookbags Laptop bag 10L",
+      "price":520,
+      "image": "https://i.ibb.co/60Tmn3L/d0a2e3daae22ab7efc7c9b57bf0d5a14-jpg-750x750-jpg.webp"
+    }
+
+  ]
+ ]
+

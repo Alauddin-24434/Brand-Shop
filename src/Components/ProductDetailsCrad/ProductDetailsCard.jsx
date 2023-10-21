@@ -48,18 +48,19 @@ const ProductDetailsCard = () => {
             <div className="col-span-3 p-4">
                 <p className="text-2xl">{name}</p>
                 <hr className="p-2" />
-               <div className="py-2">
-               <p className="mt-2 mb-2">Brand: {brand}</p>
-                <p>Price: ${price}</p>
-               </div>
-               <hr />
-               <p>{rating}</p>
+                <div className="py-2">
+                    <p className="mt-2 mb-2">Brand: {brand}</p>
+                    <p>Price: ${price}</p>
+                </div>
+                <hr />
+                <p>{rating}</p>
+                
                 <hr className="p-2" />
                 <p>{shortDescription}</p>
                 <hr className="p-2" />
-              <div>
-              <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn btn-secondary w-full">ADD To CART</button>
-              </div>
+                <div>
+                    <button onClick={() => handleCart(name, brand, type, price, rating, shortDescription, image)} className="btn btn-secondary w-full">ADD To CART</button>
+                </div>
             </div>
 
 

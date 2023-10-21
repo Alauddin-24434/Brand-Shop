@@ -1,11 +1,19 @@
-import AllProducts from "../Components/AllProducts/AllProducts";
+
 import Cetagory from "../Components/Cetagory/Cetagory";
+import FlashSale from "../Components/FlashSale/FlashSale";
+import Footer from "../Components/Footer/Footer";
+import GalaryCard from "../Components/Galary/GalaryCard";
 
 const Home = () => {
     return (
-        <div>
+        <div className="bg-gray-200">
+            <FlashSale></FlashSale>
+
             <Cetagory></Cetagory>
-            <AllProducts></AllProducts>
+          
+            <GalaryCard></GalaryCard>
+            <Footer></Footer>
+
         </div>
     );
 };
